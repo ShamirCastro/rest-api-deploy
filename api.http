@@ -1,0 +1,36 @@
+### Recuperar todas las peliculas
+GET http://localhost:1234/movies
+
+### Recuperar pelicula por ID 
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Recuperar todas las peliculas por un genero
+GET http://localhost:1234/movies?genere=AcTion
+ 
+### Crear una pelicula 
+
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "sql": "SELECT * FROM movies",
+    "title": "The GodFather",
+    "year": 1975,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://static.wikia.nocookie.net/doblaje/images/9/9a/Elpadrino.jpg/revision/latest?cb=20211023042804&path-prefix=es",
+    "genre": [
+      "Crime",
+      "Drama"
+    ] 
+}
+
+###Actualizar una pelicula PUT
+
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "title":"hola",
+    "year": "1997"
+}
